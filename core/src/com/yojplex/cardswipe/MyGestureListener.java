@@ -25,7 +25,7 @@ public class MyGestureListener implements GestureDetector.GestureListener {
 
     @Override
     public boolean fling(float velocityX, float velocityY, int button) {
-        if (GameScreen.getCard().getVel().x==0 && GameScreen.getCard().getVel().y==0) {
+        if (GameScreen.getCard().getVel().x==0 && GameScreen.getCard().getVel().y==0 && GameScreen.getDummyCard().getVel().x==0) {
             GameScreen.getCard().setVel(new Vector2(velocityX / 75 * MyGdxGame.masterScale, -velocityY / 75 * MyGdxGame.masterScale));
         }
         return false;

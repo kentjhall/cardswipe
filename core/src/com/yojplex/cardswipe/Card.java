@@ -10,16 +10,16 @@ import com.badlogic.gdx.math.Vector2;
  * Created by kenthall on 12/12/15.
  */
 public class Card {
-    private Texture card;
+    private Texture cardImg;
     private Vector2 loc;
     private Vector2 vel;
     private float width;
     private float height;
 
     public Card(Vector2 loc){
-        card=new Texture("card.png");
-        width=card.getTextureData().getWidth()*1.5f*MyGdxGame.masterScale;
-        height=card.getTextureData().getHeight()*1.5f*MyGdxGame.masterScale;
+        cardImg=new Texture("card.png");
+        width=cardImg.getTextureData().getWidth()*1.5f*MyGdxGame.masterScale;
+        height=cardImg.getTextureData().getHeight()*1.5f*MyGdxGame.masterScale;
 
         this.loc=new Vector2(loc.x-width/2, loc.y-height/2);
         vel=new Vector2(0, 0);
@@ -27,14 +27,14 @@ public class Card {
     }
 
     public void draw(SpriteBatch batch){
-        batch.draw(card, loc.x, loc.y, width, height);
+        batch.draw(cardImg, loc.x, loc.y, width, height);
 
         loc.x+=vel.x;
         loc.y+=vel.y;
     }
 
     public void dispose(){
-        card.dispose();
+        cardImg.dispose();
     }
 
     public void setVel(Vector2 vel){
